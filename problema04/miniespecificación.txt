@@ -1,0 +1,60 @@
+
+// Generar una solución que permita ingresar jugadores de fútbol; por cada jugador se debe 
+// solicitar:
+// Nombre el jugador
+// Posición en el campo de juego
+// Edad
+// Estatura
+//
+// El ciclo de ingreso de información deberá terminar cuando el usuario lo decida. Se debe 
+// imprimir el siguiente reporte (usar una cadena de acumulación):
+//
+// Listado de Jugadores
+// Alexander Dominguez -Arquero-, edad 32, estatura 1.95
+// Xavier Arreaga -Defensa-, edad 24, estatura 1.85
+// Moisés Caicedo -Mediocentro-, edad 19, estatura 1.88
+// Ángel Mena -Delantero-, edad 32, estatura 1.75
+// Michael Estrada -Delantero-, edad 27, estatura 1.93 Promedio de edades: 26.8 Promedio
+// de estaturas: 1.87
+
+1. Inicio
+2. nombre, x(200)[{{a-z},{A-Z},{BS}]
+3. posición, x(200)[{a-z},{A-Z},{BS}]
+4. cadenaAcumulación, x(200)[{1-9},{a-z},{A-Z},{BS}] <-- ""
+5. edad, i[0,n]
+6. estatura, d[0,n]
+7. promedioEdades, d[0,n] <-- 0
+8. promedioEstaturas, d[0,n] <-- 0
+9. sumaEdades, d[0,n] <-- 0
+10. sumaEstaturas, d[0,n] <-- 0
+11. bandera, x(2)[{a-z},{A-Z}] <-- "Si"
+12. contador, i[0,n] <-- 1
+13. Haga_Hasta
+14.     Escribir "Ingrese el nombre del jugador:"
+15.     Leer nombre
+16.     Escribir "Ingrese la posición en el campo del juego:"
+17.     Leer posición
+18.     Escribir "Ingrese la edad del jugador:"
+19.     Leer edad
+20.     Escribir "Ingrese la estatura del jugador:"
+21.     Leer estatura
+22.     contador <-- contador + 1
+23.     cadenaAcumulativa <-- cadenaAcumulativa + contador + "." + nombre + "-" + 
+                              posición + "-," + "edad " + edad + "," + "estatura " +   
+                              estatura + "\n"
+24.     sumaEdades <-- sumaEdades + edad
+25.     sumaEstaturas <-- sumaEstaturas + estatura 
+26.     Escribir "Ingresar Si para ingresar mas datos"
+27.     Escribir "Ingresar No para imprimir reporte"
+28.     Leer bandera 
+29. Fin Haga_Hasta (bandera != "Si")
+30. promedioEdades <-- sumaEdades / contador
+31. promedioEstaturas <-- sumaEstaturas / contador
+32. cadenaAcumulativa <-- cadenaAcumulativa + "Promedio de edades:" + promedioEdades +
+                          "\nPromedio de estaturas:" + promedioEstaturas + "\n"
+33. Si (bandera == "No")
+34.     cadenaAcumulativa <-- cadenaAcumulativa
+35. De lo contrario 
+36.     cadenaAcumulativa <-- "Datos incorrectos\n"
+37. Fin Si    
+38. Fin
