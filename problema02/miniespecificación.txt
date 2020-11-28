@@ -5,9 +5,9 @@
 1. Inicio
 2. numerador, i[0,n] <-- +1
 4. denominador, i[0,n] <-- 1
-5. cadena, X(200)[{1-9},{BS},{/,+}] <-- ""
+5. cadena, x(200)[{1-9},{BS},{/,+}] <-- ""
 6. Haga_Hasta
-9.      cadena <-- cadena + "+" + numeradorPar + "/" + denominador
+9.      cadena <-- cadena + "+" + numerador + "/" + denominador
 10.     denominador <-- denominador + 2
 11. Fin Haga_Hasta (denominador <= 9)
 12. Escribir cadena

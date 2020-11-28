@@ -27,34 +27,38 @@
 8. promedioEstaturas, d[0,n] <-- 0
 9. sumaEdades, d[0,n] <-- 0
 10. sumaEstaturas, d[0,n] <-- 0
-11. bandera, x(2)[{a-z},{A-Z}] <-- "Si"
-12. contador, i[0,n] <-- 1
-13. Haga_Hasta
-14.     Escribir "Ingrese el nombre del jugador:"
-15.     Leer nombre
-16.     Escribir "Ingrese la posición en el campo del juego:"
-17.     Leer posición
-18.     Escribir "Ingrese la edad del jugador:"
-19.     Leer edad
-20.     Escribir "Ingrese la estatura del jugador:"
-21.     Leer estatura
-22.     contador <-- contador + 1
-23.     cadenaAcumulativa <-- cadenaAcumulativa + contador + "." + nombre + "-" + 
+11. salir, x(20)[{a-z},{A-Z}] <-- "Si"
+12. bandera <-- true
+13. contador, i[0,n] <-- 1
+14. Haga_Hasta
+15.     Escribir "Ingrese el nombre del jugador:"
+16.     Leer nombre
+17.     Escribir "Ingrese la posición en el campo del juego:"
+18.     Leer posición
+19.     Escribir "Ingrese la edad del jugador:"
+20.     Leer edad
+21.     Escribir "Ingrese la estatura del jugador:"
+22.     Leer estatura
+23.     contador <-- contador + 1
+24.     cadenaAcumulativa <-- cadenaAcumulativa + contador + "." + nombre + "-" + 
                               posición + "-," + "edad " + edad + "," + "estatura " +   
                               estatura + "\n"
-24.     sumaEdades <-- sumaEdades + edad
-25.     sumaEstaturas <-- sumaEstaturas + estatura 
-26.     Escribir "Ingresar Si para ingresar mas datos"
-27.     Escribir "Ingresar No para imprimir reporte"
-28.     Leer bandera 
-29. Fin Haga_Hasta (bandera != "Si")
-30. promedioEdades <-- sumaEdades / contador
-31. promedioEstaturas <-- sumaEstaturas / contador
-32. cadenaAcumulativa <-- cadenaAcumulativa + "Promedio de edades:" + promedioEdades +
+25.     sumaEdades <-- sumaEdades + edad
+26.     sumaEstaturas <-- sumaEstaturas + estatura 
+27.     Escribir "Ingresar Si para ingresar mas datos"
+28.     Escribir "Ingresar No para imprimir reporte"
+29.     Leer salir
+30.     Si (salir != "Si")
+31.     Bandera <-- false 
+32.     Fin si
+33. Fin Haga_Hasta (bandera)
+34. promedioEdades <-- sumaEdades / contador
+35. promedioEstaturas <-- sumaEstaturas / contador
+36. cadenaAcumulativa <-- cadenaAcumulativa + "Promedio de edades:" + promedioEdades +
                           "\nPromedio de estaturas:" + promedioEstaturas + "\n"
-33. Si (bandera == "No")
-34.     cadenaAcumulativa <-- cadenaAcumulativa
-35. De lo contrario 
-36.     cadenaAcumulativa <-- "Datos incorrectos\n"
-37. Fin Si    
-38. Fin
+37. Si (salir == "No")
+38.     cadenaAcumulativa <-- cadenaAcumulativa
+39. De lo contrario 
+40.     cadenaAcumulativa <-- "Datos incorrectos\n"
+41. Fin Si    
+42. Fin
